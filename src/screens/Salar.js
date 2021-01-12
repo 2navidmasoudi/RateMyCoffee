@@ -1,11 +1,10 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import Rate from '../components/Rate';
+import {StyleSheet, Text, View} from 'react-native';
 
-function HomeScreen({navigation}) {
+function SalarScreen() {
   return (
     <View style={styles.container}>
-      <Rate navigation={navigation} />
+      <Text>به صفحه مخصوص آقا سالار خوش آمدید!</Text>
     </View>
   );
 }
@@ -18,4 +17,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default SalarScreen;

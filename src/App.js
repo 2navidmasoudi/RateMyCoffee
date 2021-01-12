@@ -9,16 +9,16 @@
 // import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 import React from 'react';
-import {SafeAreaView, StatusBar} from 'react-native';
 import Navigator from './navigator';
+// import {SafeAreaView, StatusBar} from 'react-native';
 
 const App = () => (
-  <>
-    <StatusBar barStyle="dark-content" />
-    <SafeAreaView>
-      <Navigator />
-    </SafeAreaView>
-  </>
+  // <>
+  // <StatusBar barStyle="dark-content" />
+  // <SafeAreaView>
+  <Navigator />
+  // </SafeAreaView>
+  // </>
 );
 
 export default App;
