@@ -7,11 +7,11 @@ import {
   Platform,
   StyleSheet,
 } from 'react-native';
-import {AirbnbRating} from 'react-native-ratings';
-
+import {AirbnbRating} from 'react-native-elements';
 import Card from './Card';
+import config from '../config';
 
-const Rate = ({navigation}) => {
+const Rate = () => {
   return (
     <SafeAreaView style={styles.flex}>
       <View style={styles.headingContainer}>
@@ -19,19 +19,13 @@ const Rate = ({navigation}) => {
         <Text style={styles.subtitleText}>Did you enjoy your coffee? 🥳</Text>
       </View>
       <ScrollView style={styles.flex} contentContainerStyle={styles.center}>
-        <Card title="WITH RATING" containerStyle={styles.card}>
+        <Card title="THEN RATE IT HERE!" containerStyle={styles.card}>
           <AirbnbRating
             type="heart"
             showRating={true}
-            defaultRating={3}
-            reviews={[
-              'Ridi',
-              'Ah ah',
-              'Bad nabood',
-              'Okayeee',
-              'Awwwwllllliiii!',
-            ]}
-            onFinishRating={() => navigation.navigate('Salar')}
+            defaultRating={1}
+            reviews={config.rateReviews}
+            // onFinishRating={() => navigation.navigate('Salar')}
           />
         </Card>
         {/* <Card title="CUSTOM RATING" containerStyle={styles.card}>
@@ -93,7 +87,7 @@ const styles = StyleSheet.create({
     color: '#34495e',
   },
   card: {
-    // backgroundColor: 'red',
+    backgroundColor: 'black',
     width: '85%',
     marginBottom: 20,
   },

@@ -1,22 +1,59 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import * as Screens from '../screens';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import TabBar from '../components/TabBar';
 
-const Stack = createStackNavigator();
+const HomeStack = createStackNavigator();
 
-export default function navigation() {
+function HomeStackScreen() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Home"
+    <HomeStack.Navigator>
+      <HomeStack.Screen
+        name="RateRoom"
         component={Screens.HomeScreen}
-        options={{title: "Navid's Coffee"}}
+        options={{title: 'Rate'}}
       />
-      <Stack.Screen
-        name="Salar"
+    </HomeStack.Navigator>
+  );
+}
+
+const RateStack = createStackNavigator();
+
+function RateStackScreen() {
+  return (
+    <RateStack.Navigator>
+      <RateStack.Screen
+        name="Rate"
+        component={Screens.RateScreen}
+        options={{title: 'Add Rating'}}
+      />
+    </RateStack.Navigator>
+  );
+}
+
+const SalarStack = createStackNavigator();
+
+function SalarStackScreen() {
+  return (
+    <SalarStack.Navigator>
+      <SalarStack.Screen
+        name="SalarRoom"
         component={Screens.SalarScreen}
         options={{title: "Salar's Zarafeh"}}
       />
-    </Stack.Navigator>
+    </SalarStack.Navigator>
+  );
+}
+
+const Tab = createBottomTabNavigator();
+
+export default function navigation() {
+  return (
+    <Tab.Navigator tabBar={(props) => <TabBar {...props} />}>
+      <Tab.Screen name="Overal" component={HomeStackScreen} />
+      <Tab.Screen name="Rate" component={RateStackScreen} />
+      <Tab.Screen name="Salar" component={SalarStackScreen} />
+    </Tab.Navigator>
   );
 }

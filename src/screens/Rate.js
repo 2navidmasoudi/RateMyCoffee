@@ -1,10 +1,12 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View} from 'react-native';
+import Rate from '../components/Rate';
 
-function HomeScreen({navigation}) {
+function RateScreen() {
   return (
     <View style={styles.container}>
-      <Text>HomeScreen</Text>
+      <Rate />
+      {/* <Text></Text> */}
     </View>
   );
 }
@@ -17,4 +19,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default RateScreen;
